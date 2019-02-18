@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Educacion.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Educacion.Win
         public Form1()
         {
             InitializeComponent();
+
+            var estudiantesBL = new EstudiantesBL();
+
+            var listadeEstudiantes = estudiantesBL.ObtenerEstudiantes();
+
+            listadeEstudiantesBindingSource.DataSource = listadeEstudiantes;
         }
     }
 }
