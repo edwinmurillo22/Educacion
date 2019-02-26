@@ -27,5 +27,31 @@ namespace Educacion.BL
             return ListadeEstudiantes;
 
         }
+
+        public void GuardarEstudiantes(Estudiantes estudiantes)
+        
+        {
+            if (estudiantes.Id == 0)
+            {
+                _contexto.Estudiantes.Add(estudiantes);
+            }
+            else
+            {
+                var estudiantesExistente = _contexto.Estudiantes.Find(estudiantes.Id);
+                estudiantesExistente.Nombre = estudiantes.Nombre;
+                estudiantesExistente.Direccion = estudiantes.Direccion;
+                estudiantesExistente.Telefono = estudiantes.Telefono;
+
+            }
+                _contexto.SaveChanges();
+
+        }
+
+        public Estudiantes ObtenerEstudiante(int id)
+        {
+            var estudiantes = _contexto.Estudiantes.Find(id);
+            return estudiantes;
+
+        }
     }
 }
