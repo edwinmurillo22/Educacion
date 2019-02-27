@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
+    <Compile Include="Cursos.cs" />
+    <Compile Include="CursosBL.cs" />
     <Compile Include="Estudiantes.cs" />
     <Compile Include="EstudiantesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

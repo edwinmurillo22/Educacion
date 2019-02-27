@@ -53,5 +53,13 @@ namespace Educacion.BL
             return estudiantes;
 
         }
+
+        public void EliminarEstudiante(int id)
+        {
+            var estudiantes = _contexto.Estudiantes.Find(id);
+            _contexto.Estudiantes.Remove(estudiantes);
+            _contexto.SaveChanges();
+
+        }
     }
 }

@@ -57,5 +57,25 @@ namespace Educacion.WebAdmin.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult Detalle(int id)
+        {
+            var estudiante = _estudiantesBL.ObtenerEstudiante(id);
+
+            return View(estudiante);
         }
+
+        public ActionResult Eliminar(int id)
+        {
+            var estudiante = _estudiantesBL.ObtenerEstudiante(id);
+
+            return View(estudiante);
+        }
+        [HttpPost]
+        public ActionResult Eliminar (Estudiantes estudiantes)
+        {
+            _estudiantesBL.EliminarEstudiante(estudiantes.Id);
+            return RedirectToAction("Index");
+        }
+    }
 }

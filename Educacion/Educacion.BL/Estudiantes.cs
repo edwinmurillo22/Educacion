@@ -12,6 +12,9 @@ namespace Educacion.BL
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public int Telefono { get; set; }
+        public Cursos Curso { get; set; }
+        public bool Activo { get; set; }
+
 
     }
 }

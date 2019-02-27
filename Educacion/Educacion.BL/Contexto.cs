@@ -21,6 +21,8 @@ namespace Educacion.BL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
         public DbSet<Estudiantes> Estudiantes { get; set; }
+        public DbSet<Cursos> Cursos { get; set; }
+
 
 
     }
