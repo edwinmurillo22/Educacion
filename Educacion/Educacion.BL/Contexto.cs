@@ -22,6 +22,7 @@ namespace Educacion.BL
         }
         public DbSet<Estudiantes> Estudiantes { get; set; }
         public DbSet<Cursos> Cursos { get; set; }
+        public DbSet<Materias> Materias { get; set; }
 
 
 

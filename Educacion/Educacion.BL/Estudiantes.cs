@@ -8,6 +8,11 @@ namespace Educacion.BL
 {
     public class Estudiantes
     {
+        public Estudiantes()
+        {
+            Activo = true;
+        }
+
         public int Id  { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }

@@ -145,6 +145,7 @@
     <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\EstudiantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MateriasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +169,16 @@
     <Content Include="Views\Estudiantes\Editar.cshtml" />
     <Content Include="Views\Estudiantes\Detalle.cshtml" />
     <Content Include="Views\Estudiantes\Eliminar.cshtml" />
+    <Content Include="Views\Cursos\Index.cshtml" />
+    <Content Include="Views\Cursos\Crear.cshtml" />
+    <Content Include="Views\Cursos\Editar.cshtml" />
+    <Content Include="Views\Cursos\Detalle.cshtml" />
+    <Content Include="Views\Cursos\Eliminar.cshtml" />
+    <Content Include="Views\Materias\Index.cshtml" />
+    <Content Include="Views\Materias\Crear.cshtml" />
+    <Content Include="Views\Materias\Editar.cshtml" />
+    <Content Include="Views\Materias\Detalle.cshtml" />
+    <Content Include="Views\Materias\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,7 +189,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cursos\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>

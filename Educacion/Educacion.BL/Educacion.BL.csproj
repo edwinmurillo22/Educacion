@@ -54,6 +54,8 @@
     <Compile Include="CursosBL.cs" />
     <Compile Include="Estudiantes.cs" />
     <Compile Include="EstudiantesBL.cs" />
+    <Compile Include="Materias.cs" />
+    <Compile Include="MateriasBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
