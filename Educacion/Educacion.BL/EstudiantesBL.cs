@@ -11,20 +11,22 @@ namespace Educacion.BL
 
         Contexto _contexto;
 
-        public List<Estudiantes> ListadeEstudiantes { get; set; }
+        public List<Estudiantes> listadeEstudiantes { get; set; }
 
         public EstudiantesBL()
         {
             _contexto = new Contexto();
-            ListadeEstudiantes = new List<Estudiantes>();
+            listadeEstudiantes = new List<Estudiantes>();
         }
 
 
         public List<Estudiantes> ObtenerEstudiantes()
         {
-
-            ListadeEstudiantes = _contexto.Estudiantes.ToList();
-            return ListadeEstudiantes;
+            listadeEstudiantes = _contexto.Estudiantes
+                .Include("Curso")
+               .ToList();
+                
+            return listadeEstudiantes;
 
         }
 
@@ -41,7 +43,8 @@ namespace Educacion.BL
                 estudiantesExistente.Nombre = estudiantes.Nombre;
                 estudiantesExistente.Direccion = estudiantes.Direccion;
                 estudiantesExistente.Telefono = estudiantes.Telefono;
-
+                estudiantesExistente.CursoId = estudiantes.CursoId;
+                estudiantesExistente.Activo = estudiantes.Activo;
             }
                 _contexto.SaveChanges();
 
@@ -49,7 +52,8 @@ namespace Educacion.BL
 
         public Estudiantes ObtenerEstudiante(int id)
         {
-            var estudiantes = _contexto.Estudiantes.Find(id);
+            var estudiantes = _contexto.Estudiantes
+            .Include("Curso").FirstOrDefault(p => p.Id == id);
             return estudiantes;
 
         }

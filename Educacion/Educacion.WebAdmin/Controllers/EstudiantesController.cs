@@ -10,10 +10,13 @@ namespace Educacion.WebAdmin.Controllers
     public class EstudiantesController : Controller
     {
         EstudiantesBL _estudiantesBL;
+        CursosBL _cursosBL;
+        
 
         public EstudiantesController()
         {
             _estudiantesBL = new EstudiantesBL();
+            _cursosBL = new CursosBL();
 
         }
 
@@ -28,8 +31,13 @@ namespace Educacion.WebAdmin.Controllers
 
         public ActionResult Crear()
         {
-            var nuevoEstudiante = new Estudiantes();
-            return View(nuevoEstudiante);
+            var nuevoEstudiantes = new Estudiantes();
+            var cursos = _cursosBL.ObtenerCursos();
+
+            ViewBag.CursoId = 
+                new SelectList(cursos, "Id", "Curso");
+
+            return View(nuevoEstudiantes);
 
         }
 
@@ -46,12 +54,17 @@ namespace Educacion.WebAdmin.Controllers
         public ActionResult Editar (int id)
         {
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
+            var cursos = _cursosBL.ObtenerCursos();
+
+            ViewBag.CursoId =
+                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+
             return View(estudiantes);
 
         }
 
         [HttpPost]
-        public ActionResult Editar (Estudiantes estudiantes)
+        public ActionResult Editar(Estudiantes estudiantes)
         {
             _estudiantesBL.GuardarEstudiantes(estudiantes);
             return RedirectToAction("Index");
@@ -60,16 +73,25 @@ namespace Educacion.WebAdmin.Controllers
 
         public ActionResult Detalle(int id)
         {
-            var estudiante = _estudiantesBL.ObtenerEstudiante(id);
+            var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
+            var cursos = _cursosBL.ObtenerCursos();
 
-            return View(estudiante);
+            ViewBag.CursoId =
+                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+
+
+            return View(estudiantes);
         }
 
         public ActionResult Eliminar(int id)
         {
-            var estudiante = _estudiantesBL.ObtenerEstudiante(id);
+            var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
+            var cursos = _cursosBL.ObtenerCursos();
 
-            return View(estudiante);
+            ViewBag.CursoId =
+                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+
+            return View(estudiantes);
         }
         [HttpPost]
         public ActionResult Eliminar (Estudiantes estudiantes)

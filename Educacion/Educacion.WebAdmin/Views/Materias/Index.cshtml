@@ -7,12 +7,18 @@
 <h2>Materias</h2>
 
 <p>
-    @Html.ActionLink("Nuevo crear", "Crear")
+    @Html.ActionLink("Nuevo Crear", "Crear")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Materia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CursoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
         </th>
         <th></th>
     </tr>
@@ -23,8 +29,14 @@
             @Html.DisplayFor(modelItem => item.Materia)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CursoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalles", "Detalles", new { id=item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
             @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
         </td>
     </tr>

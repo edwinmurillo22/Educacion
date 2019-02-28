@@ -40,8 +40,10 @@ namespace Educacion.BL
             {
                 var materiasExistente = _contexto.Materias.Find(materias.Id);
                 materiasExistente.Materia = materias.Materia;
-              
-               
+                materiasExistente.CursoId = materias.CursoId;
+                materiasExistente.Activo = materias.Activo;
+
+
 
             }
             _contexto.SaveChanges();
@@ -50,7 +52,8 @@ namespace Educacion.BL
 
         public Materias ObtenerMaterias(int id)
         {
-            var materias = _contexto.Materias.Find(id);
+            var materias = _contexto.Materias
+                 .Include("Curso").FirstOrDefault(p => p.Id == id);
             return materias;
 
         }

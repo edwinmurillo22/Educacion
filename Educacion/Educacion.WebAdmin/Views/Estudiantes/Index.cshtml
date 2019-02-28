@@ -20,6 +20,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Telefono)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
         <th></th>
     </tr>
 
@@ -34,6 +40,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Telefono)
         </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Curso.Curso)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+
+        </td>
+
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
             @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
