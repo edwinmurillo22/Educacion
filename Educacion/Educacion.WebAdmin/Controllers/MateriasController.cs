@@ -43,15 +43,30 @@ namespace Educacion.WebAdmin.Controllers
 
         }
 
+
         [HttpPost]
         public ActionResult Crear(Materias materias)
         {
-            _materiasBL.GuardarMaterias(materias);
+            if (ModelState.IsValid)
+            {
+
+                if (materias.Materia != materias.Materia.Trim())
+                {
+                    ModelState.AddModelError("Curso", "El curso no debe de llevar espacios al inicio o al final");
+                    return View(materias);
+
+                }
+
+                _materiasBL.GuardarMaterias(materias);
 
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
 
+            }
+            return View(materias);
         }
+
+
 
         public ActionResult Editar(int id)
         {

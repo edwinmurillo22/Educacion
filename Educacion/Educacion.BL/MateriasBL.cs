@@ -24,7 +24,9 @@ namespace Educacion.BL
         public List<Materias> ObtenerMaterias()
         {
 
-            ListadeMaterias = _contexto.Materias.ToList();
+            ListadeMaterias = _contexto.Materias
+               .Include("Curso")
+               .ToList();
             return ListadeMaterias;
 
         }

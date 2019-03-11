@@ -35,7 +35,16 @@
             @Html.DisplayFor(model => model.Telefono)
         </dd>
 
-    </dl>
+        <dt>
+            @Html.DisplayFor(model => model.UrlImagen)
+
+        </dt>
+
+        <dd>
+            <img src="@Model.UrlImagen" alt="@Model.Nombre" style="width:200px; height:auto;" />
+
+
+</dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()

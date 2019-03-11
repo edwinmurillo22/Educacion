@@ -42,16 +42,34 @@ namespace Educacion.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Estudiantes estudiantes)
+        public ActionResult Crear(Estudiantes estudiantes, HttpPostedFileBase imagen)
+
         {
-            _estudiantesBL.GuardarEstudiantes(estudiantes);
+            if (ModelState.IsValid)
+            {
+
+                if (estudiantes.Nombre != estudiantes.Nombre.Trim())
+                {
+                    ModelState.AddModelError("Nombre", "El Nombre no debe de llevar espacios al inicio o al final");
+                    return View(estudiantes);
+
+                }
+                if (imagen != null)
+                {
+                    estudiantes.UrlImagen = GuardarImagen(imagen);
+                }
 
 
-            return RedirectToAction("Index");
+                _estudiantesBL.GuardarEstudiantes(estudiantes);
 
+
+                return RedirectToAction("Index");
+
+            }
+            return View(estudiantes);
         }
 
-        public ActionResult Editar (int id)
+        public ActionResult Editar(int id)
         {
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursos();
@@ -94,10 +112,19 @@ namespace Educacion.WebAdmin.Controllers
             return View(estudiantes);
         }
         [HttpPost]
-        public ActionResult Eliminar (Estudiantes estudiantes)
+        public ActionResult Eliminar(Estudiantes estudiantes)
         {
             _estudiantesBL.EliminarEstudiante(estudiantes.Id);
             return RedirectToAction("Index");
         }
+        private string GuardarImagen(HttpPostedFileBase imagen)
+        {
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            imagen.SaveAs(path);
+
+            return "/Imagenes/" + imagen.FileName;
+        }
+
+
     }
 }

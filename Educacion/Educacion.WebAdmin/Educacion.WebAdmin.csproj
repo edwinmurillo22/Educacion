@@ -146,6 +146,8 @@
     <Compile Include="Controllers\EstudiantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MateriasController.cs" />
+    <Compile Include="Controllers\NotasController.cs" />
+    <Compile Include="Controllers\NotasDetalleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,8 +190,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagenes\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\NotasDetalle\" />
+    <Folder Include="Views\Notas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Educacion.BL\Educacion.BL.csproj">

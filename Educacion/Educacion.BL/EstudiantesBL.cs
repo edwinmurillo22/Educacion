@@ -23,7 +23,7 @@ namespace Educacion.BL
         public List<Estudiantes> ObtenerEstudiantes()
         {
             listadeEstudiantes = _contexto.Estudiantes
-                .Include("Curso")
+                .Include("Cursos")
                .ToList();
                 
             return listadeEstudiantes;
@@ -45,6 +45,7 @@ namespace Educacion.BL
                 estudiantesExistente.Telefono = estudiantes.Telefono;
                 estudiantesExistente.CursoId = estudiantes.CursoId;
                 estudiantesExistente.Activo = estudiantes.Activo;
+                estudiantesExistente.UrlImagen = estudiantes.UrlImagen;
             }
                 _contexto.SaveChanges();
 

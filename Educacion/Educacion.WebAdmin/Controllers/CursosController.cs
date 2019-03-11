@@ -10,6 +10,7 @@ namespace Educacion.WebAdmin.Controllers
     public class CursosController : Controller
     {
         CursosBL _cursosBL;
+        private object _;
 
 
         public CursosController()
@@ -34,14 +35,32 @@ namespace Educacion.WebAdmin.Controllers
 
         }
 
+
         [HttpPost]
-        public ActionResult Crear(Cursos cursos)
+        public ActionResult Crear(Cursos cursos, HttpPostedFileBase imagen)
         {
-            _cursosBL.GuardarCursos(cursos);
+            if (ModelState.IsValid)
+            {
+
+                if (cursos.Curso != cursos.Curso.Trim())
+                {
+                    ModelState.AddModelError("Curso", "El curso no debe de llevar espacios al inicio o al final");
+                    return View(cursos);
+
+                }
+                if (imagen != null)
+                {
+                    cursos.UrlImagen = GuardarImagen(imagen);
+                }
 
 
-            return RedirectToAction("Index");
+                _cursosBL.GuardarCursos(cursos);
 
+
+                return RedirectToAction("Index");
+            }
+
+            return View(cursos);
         }
 
         public ActionResult Editar(int id)
@@ -54,8 +73,22 @@ namespace Educacion.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Cursos cursos)
         {
-            _cursosBL.GuardarCursos(cursos);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+
+                if (cursos.Curso != cursos.Curso.Trim())
+                {
+                    ModelState.AddModelError("Curso", "El curso no debe de llevar espacios al inicio o al final");
+                    return View(cursos);
+
+                }
+                _cursosBL.GuardarCursos(cursos);
+
+
+                return RedirectToAction("Index");
+            }
+
+            return View(cursos);
 
         }
 
@@ -77,6 +110,13 @@ namespace Educacion.WebAdmin.Controllers
         {
             _cursosBL.EliminarCursos(cursos.Id);
             return RedirectToAction("Index");
+        }
+        private string GuardarImagen(HttpPostedFileBase imagen)
+        {
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            imagen.SaveAs(path);
+
+            return "/Imagenes/" + imagen.FileName;
         }
     }
 }
