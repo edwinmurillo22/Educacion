@@ -74,8 +74,8 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursos();
 
-            ViewBag.CursoId =
-                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+          //  ViewBag.CursoId =
+            //    new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
             return View(estudiantes);
 
@@ -94,8 +94,8 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursos();
 
-            ViewBag.CursoId =
-                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+         //   ViewBag.CursoId =
+           //     new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
 
             return View(estudiantes);
@@ -106,8 +106,8 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursos();
 
-            ViewBag.CursoId =
-                new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+          //  ViewBag.CursoId =
+            //    new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
             return View(estudiantes);
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Educacion.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,19 @@ namespace Educacion.WebAdmin.Controllers
 {
     public class NotasDetalleController : Controller
     {
-        // GET: NotasDetalle
-        public ActionResult Index()
+        NotasBL _notasBL;
+
+        public NotasDetalleController()
         {
-            return View();
+            _notasBL = new NotasBL();
+        }
+
+        public ActionResult Index(int id)
+        {
+            var notas = _notasBL.ObtenerNotas(id);
+            notas.ListadeNotasDetalle = _notasBL.ObtenerNotasDetalle(id);
+
+            return View(notas);
         }
     }
 }

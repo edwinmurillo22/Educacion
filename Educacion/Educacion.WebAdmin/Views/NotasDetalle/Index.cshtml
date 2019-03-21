@@ -1,0 +1,43 @@
+﻿@model Educacion.BL.Notas
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Notas Detalle</h2>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Curso)
+        </td>
+        <td>
+            @Model.Curso.Curso
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Anio)
+        </td>
+        <td>
+            @Model.Anio
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Estudiante)
+        </td>
+        <td>
+            @Model.Estudiante.Nombre
+        </td>
+        <td align="right">
+            <img src="@Model.Estudiante.UrlImagen" alt="@Model.Estudiante.Nombre" style="max-width: 100px;" />
+        </td>
+    </tr>
+</table>
+
+<p>
+    Pendiente el detalle
+</p>

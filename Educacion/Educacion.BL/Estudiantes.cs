@@ -25,9 +25,9 @@ namespace Educacion.BL
 
         public int Telefono { get; set; }
 
-        public int CursoId { get; set; }
+       // public int CursoId { get; set; }
 
-        public Cursos Curso { get; set; }
+      //  public Cursos Curso { get; set; }
         [Display(Name = "Imagen")]
         public string UrlImagen { get; set; }
         public bool Activo { get; set; }

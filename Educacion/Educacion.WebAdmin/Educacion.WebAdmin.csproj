@@ -181,6 +181,9 @@
     <Content Include="Views\Materias\Editar.cshtml" />
     <Content Include="Views\Materias\Detalle.cshtml" />
     <Content Include="Views\Materias\Eliminar.cshtml" />
+    <Content Include="Views\Notas\Crear.cshtml" />
+    <Content Include="Views\Notas\Index.cshtml" />
+    <Content Include="Views\NotasDetalle\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -193,8 +196,6 @@
     <Folder Include="Imagenes\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\NotasDetalle\" />
-    <Folder Include="Views\Notas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Educacion.BL\Educacion.BL.csproj">
