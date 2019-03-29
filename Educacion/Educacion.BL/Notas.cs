@@ -43,7 +43,7 @@ namespace Educacion.BL
         public int SegundoParcial { get; set; }
         public int TercerParcial { get; set; }
         public int CuartoParcial { get; set; }
-
+        public int NotaTotal { get; set; }
         public int NotaFinal { get; set; }
 
     }
