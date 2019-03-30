@@ -185,6 +185,9 @@
     <Content Include="Views\Notas\Index.cshtml" />
     <Content Include="Views\NotasDetalle\Index.cshtml" />
     <Content Include="Views\NotasDetalle\Crear.cshtml" />
+    <Content Include="Views\NotasDetalle\Eliminar.cshtml" />
+    <Content Include="Views\Notas\Editar.cshtml" />
+    <Content Include="Views\Notas\Detalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
