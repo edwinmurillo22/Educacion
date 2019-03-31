@@ -10,7 +10,7 @@ namespace Educacion.WebAdmin.Controllers
     public class CursosController : Controller
     {
         CursosBL _cursosBL;
-        private object _;
+       
 
 
 
@@ -23,7 +23,7 @@ namespace Educacion.WebAdmin.Controllers
         // GET: Estudiantes
         public ActionResult Index()
         {
-            var listadeCursos = _cursosBL.ObtenerCursos();
+            var listadeCursos = _cursosBL.ObtenerCursosActivos();
 
 
             return View(listadeCursos);

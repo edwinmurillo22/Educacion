@@ -8,7 +8,15 @@ using System.Threading.Tasks;
 namespace Educacion.BL
 {
    public class Cursos
-    {
+
+
+ {
+        public Cursos()
+        {
+            Activo = true;
+
+        }
+
         [Required(ErrorMessage = "Ingrese el Id")]
         public int Id { get; set; }
         [Display(Name = "Curso")]

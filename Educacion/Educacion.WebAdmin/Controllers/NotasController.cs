@@ -32,10 +32,10 @@ namespace Educacion.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaNota = new Notas();
-            var estudiantes = _estudiantesBL.ObtenerEstudiantes();
+            var estudiantes = _estudiantesBL.ObtenerEstudiantesActivos();
             ViewBag.EstudianteId = new SelectList(estudiantes, "Id", "Nombre");
 
-            var cursos = _cursosBL.ObtenerCursos();
+            var cursos = _cursosBL.ObtenerCursosActivos();
             ViewBag.CursoId = new SelectList(cursos, "Id", "Curso");
 
             return View(nuevaNota);
@@ -45,10 +45,10 @@ namespace Educacion.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Crear(Notas Notas)
         {
-            var estudiantes = _estudiantesBL.ObtenerEstudiantes();
+            var estudiantes = _estudiantesBL.ObtenerEstudiantesActivos();
             ViewBag.EstudianteId = new SelectList(estudiantes, "Id", "Nombre");
 
-            var cursos = _cursosBL.ObtenerCursos();
+            var cursos = _cursosBL.ObtenerCursosActivos();
             ViewBag.CursoId = new SelectList(cursos, "Id", "Curso");
 
             if (ModelState.IsValid)
@@ -80,10 +80,10 @@ namespace Educacion.WebAdmin.Controllers
         {
             var Notas = _notasBL.ObtenerNotas(id);
 
-            var estudiantes = _estudiantesBL.ObtenerEstudiantes();
+            var estudiantes = _estudiantesBL.ObtenerEstudiantesActivos();
             ViewBag.EstudianteId = new SelectList(estudiantes, "Id", "Nombre", Notas.EstudianteId);
 
-            var cursos = _cursosBL.ObtenerCursos();
+            var cursos = _cursosBL.ObtenerCursosActivos();
             ViewBag.CursoId = new SelectList(cursos, "Id", "Curso", Notas.CursoId);
 
             return View(Notas);
@@ -112,10 +112,10 @@ namespace Educacion.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var estudiantes = _estudiantesBL.ObtenerEstudiantes();
+            var estudiantes = _estudiantesBL.ObtenerEstudiantesActivos();
             ViewBag.EstudianteId = new SelectList(estudiantes, "Id", "Nombre", Notas.EstudianteId);
 
-            var cursos = _cursosBL.ObtenerCursos();
+            var cursos = _cursosBL.ObtenerCursosActivos();
             ViewBag.CursoId = new SelectList(cursos, "Id", "Curso", Notas.CursoId);
 
             return View(Notas);

@@ -20,10 +20,12 @@ namespace Educacion.BL
         }
 
 
-        public List<Cursos> ObtenerCursos()
+        public List<Cursos> ObtenerCursosActivos()
         {
 
-            ListadeCursos = _contexto.Cursos.ToList();
+            ListadeCursos = _contexto.Cursos.Where(r => r.Activo == true)
+                 .OrderBy(r => r.Curso)
+                .ToList();
             return ListadeCursos;
 
         }

@@ -59,6 +59,8 @@
     <Compile Include="Notas.cs" />
     <Compile Include="NotasBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportedeAlumnosporClaseBL.cs" />
+    <Compile Include="ReportedeAlumnosporClase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

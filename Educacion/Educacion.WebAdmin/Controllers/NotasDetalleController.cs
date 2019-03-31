@@ -32,7 +32,7 @@ namespace Educacion.WebAdmin.Controllers
             var nuevaNotasDetalle = new NotasDetalle();
             nuevaNotasDetalle.NotaId = id;
 
-            var materias = _materiasBL.ObtenerMaterias();
+            var materias = _materiasBL.ObtenerMateriasActivos();
             ViewBag.MateriaId = new SelectList(materias, "Id", "Materia");
 
             return View(nuevaNotasDetalle);
@@ -55,7 +55,7 @@ namespace Educacion.WebAdmin.Controllers
                 return RedirectToAction("Index", new { id = notasDetalle.NotaId });
             }
 
-            var materias = _materiasBL.ObtenerMaterias();
+            var materias = _materiasBL.ObtenerMateriasActivos();
             ViewBag.MateriaId = new SelectList(materias, "Id", "Materia");
 
             return View(notasDetalle);

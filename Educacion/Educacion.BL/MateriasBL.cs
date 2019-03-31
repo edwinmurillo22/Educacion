@@ -20,11 +20,22 @@ namespace Educacion.BL
             ListadeMaterias = new List<Materias>();
         }
 
-
         public List<Materias> ObtenerMaterias()
         {
 
-            ListadeMaterias = _contexto.Materias.ToList();
+            ListadeMaterias = _contexto.Materias.OrderBy(r=>r.Materia)
+                
+                .ToList();
+            return ListadeMaterias;
+
+        }
+
+        public List<Materias> ObtenerMateriasActivos()
+        {
+
+            ListadeMaterias = _contexto.Materias.Where(r=>r.Activo== true)
+                .OrderBy(r => r.Materia)
+                .ToList();
             return ListadeMaterias;
 
         }

@@ -19,10 +19,21 @@ namespace Educacion.BL
             listadeEstudiantes = new List<Estudiantes>();
         }
 
-
         public List<Estudiantes> ObtenerEstudiantes()
         {
-            listadeEstudiantes = _contexto.Estudiantes.ToList();
+            listadeEstudiantes = _contexto.Estudiantes
+                 .OrderBy(r => r.Nombre)
+                .ToList();
+
+            return listadeEstudiantes;
+        }
+
+
+        public List<Estudiantes> ObtenerEstudiantesActivos()
+        {
+            listadeEstudiantes = _contexto.Estudiantes.Where(r => r.Activo == true)
+                 .OrderBy(r => r.Nombre)
+                .ToList();
                 
             return listadeEstudiantes;
 

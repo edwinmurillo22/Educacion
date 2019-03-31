@@ -145,6 +145,7 @@
     <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\EstudiantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriasController.cs" />
     <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Controllers\NotasDetalleController.cs" />
@@ -188,6 +189,9 @@
     <Content Include="Views\NotasDetalle\Eliminar.cshtml" />
     <Content Include="Views\Notas\Editar.cshtml" />
     <Content Include="Views\Notas\Detalle.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

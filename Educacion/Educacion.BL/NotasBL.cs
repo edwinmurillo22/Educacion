@@ -24,6 +24,7 @@ namespace Educacion.BL
             listadeNotas = _contexto.Notas
                 .Include("Estudiante")
                 .Include("Curso")
+               
                .ToList();
 
             return listadeNotas;
@@ -34,6 +35,7 @@ namespace Educacion.BL
         {
             var listadeNotasDetalle = _contexto.NotasDetalle
                 .Include("Materia")
+          
                 .Where(o => o.NotaId == notasId).ToList();
 
             return listadeNotasDetalle;
