@@ -1,50 +1,295 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>Sistema de Educacion</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
+@RenderBody();
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Estudiantes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        @Html.ActionLink("Inicio", "Index", "Home")
+    <div class="hero-content">
+        <header class="site-header">
+            <div class="top-header-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                            <div class="header-bar-email d-flex align-items-center">
+                                <i class="fa fa-envelope"></i><a href="#">info@Sisteduc.hn</a>
+                            </div><!-- .header-bar-email -->
 
-                    </li>
+                            <div class="header-bar-text lg-flex align-items-center">
+                                <p><i class="fa fa-phone"></i>2545-2245 </p>
+                            </div><!-- .header-bar-text -->
+                        </div><!-- .col -->
 
-                    <li>
-                        @Html.ActionLink("Estudiantes", "Index", "Estudiantes")
+                        <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                            <div class="header-bar-search">
+                                <form class="flex align-items-stretch">
+                                    <input type="search" placeholder="">
+                                    <button type="submit" value="" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div><!-- .header-bar-search -->
 
-                    </li>
+                            <div class="header-bar-menu">
+                                <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
+                                 
+                                    <li><a href="#">Iniciar Sesion</a></li>
+                                </ul>
+                            </div><!-- .header-bar-menu -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container-fluid -->
+            </div><!-- .top-header-bar -->
 
-                </ul>
-            </div>
-        </div>
-    </div>
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9 col-lg-3">
+                            <div class="site-branding">
+                                <h1 class="site-title"><a href="index.html" rel="home">Sistema de<span>Educacion</span></a></h1>
+                            </div><!-- .site-branding -->
+                        </div><!-- .col -->
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li>     </li> 
+                                    <li class="current-menu-item" ><a href="index.html"> IInicio</a> </li>
+                                    <li><a href="#">Estudiantes</a></li>
+                                    <li><a href="#">Cursos</a></li>
+                                    <li><a href="#">Materias</a></li>
+                                    <li><a href="#">Notas</a></li>
+                                </ul>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- .hamburger-menu -->
+
+                                <div class="header-bar-cart">
+                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                </div><!-- .header-bar-search -->
+                            </nav><!-- .site-navigation -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .nav-bar -->
+        </header><!-- .site-header -->
+
+        <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4></h4>   
+                                <h1>Sistema de consulta de estudiante.<br /></h1>
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <p></p>
+                            </div><!-- .entry-content -->
+
+                            <footer class="entry-footer read-more">
+                                <a href="#">Ingresar Sesion para ver datos</a>
+                            </footer><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+    <div ></div>class="icon-boxes">
+        <div class="container-fluid">
+            <div class="flex flex-wrap align-items-stretch">
+                <div class="icon-box">
+                    <div class="icon">
+                        <span class="ti-user"></span>
+                    </div><!-- .icon -->
+
+                    <header class="entry-header">
+                        <h2 class="entry-title">Estudiantes</h2>
+                    </header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>Lista de Estudiantes </p>
+                    </div><!-- .entry-content -->
+
+                    <footer class="entry-footer read-more">
+                        <a href="#">ver <i class="fa fa-long-arrow-right"></i></a>
+                    </footer><!-- .entry-footer -->
+                </div><!-- .icon-box -->
+
+                <div class="icon-box">
+                    <div class="icon">
+                        <span class="ti-folder"></span>
+                    </div><!-- .icon -->
+
+                    <header class="entry-header">
+                        <h2 class="entry-title">Cursos</h2>
+                    </header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>Lista de Cursos Disponibles</p>
+                    </div><!-- .entry-content -->
+
+                    <footer class="entry-footer read-more">
+                        <a href="#">ver<i class="fa fa-long-arrow-right"></i></a>
+                    </footer><!-- .entry-footer -->
+                </div><!-- .icon-box -->
+
+                <div class="icon-box">
+                    <div class="icon">
+                        <span class="ti-book"></span>
+                    </div><!-- .icon -->
+
+                    <header class="entry-header">
+                        <h2 class="entry-title">Materia</h2>
+                    </header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>Lista de Materias Habilitadas</p>
+                    </div><!-- .entry-content -->
+
+                    <footer class="entry-footer read-more">
+                        <a href="#">ver<i class="fa fa-long-arrow-right"></i></a>
+                    </footer><!-- .entry-footer -->
+                </div><!-- .icon-box -->
+
+                <div class="icon-box">
+                    <div class="icon">
+                        <span class="ti-world"></span>
+                    </div><!-- .icon -->
+
+                    <header class="entry-header">
+                        <h2 class="entry-title">Notas</h2>
+                    </header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>Notas Obtenidas por estudiante
+
+                    <footer class="entry-footer read-more">
+                        <a href="#">ver<i class="fa fa-long-arrow-right"></i></a>
+                    </footer><!-- .entry-footer -->
+                </div><!-- .icon-box -->
+            </div><!-- .row -->
+        </div><!-- .container-fluid -->
+    </div><!-- .icon-boxes -->
+
+
+
+
+
+
+
+
+
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="foot-about">
+                            <a class="foot-logo" href="#"><img src="images/SISTEDUC.png" alt=""></a>
+
+                            <p>El mejor sistema administrativo para educacion </p>
+
+                            <p class="footer-copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> Derechos Reservados |  <i class="fa fa-heart-o   " aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank"></a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contactanos</h2>
+
+                            <ul>
+                                <li>Email: info@Sisteduc.hn</li>
+                                <li>Phone: 8849-7136</li>
+                               
+                            </ul>
+                        </div><!-- .foot-contact -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                        
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                        <div class="follow-us">
+                            <h2>Follow Us</h2>
+
+                            <ul class="follow-us flex flex-wrap align-items-center">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div><!-- .quick-links -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
+                            <a href="#"><img src="images/app-store.png" alt=""></a>
+                            <a href="#"><img src="images/play-store.png" alt=""></a>
+                        </div><!-- .download-apps -->
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                        <div class="footer-bar-nav">
+                            <ul class="flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                                <li><a href="#">DPA</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div><!-- .footer-bar-nav -->
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-bar -->
+    </footer><!-- .site-footer -->
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+
 </body>
 </html>

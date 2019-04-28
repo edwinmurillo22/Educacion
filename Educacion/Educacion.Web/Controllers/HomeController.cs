@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Educacion.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,11 @@ namespace Educacion.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var estudiantesBL = new EstudiantesBL();
+            var listadeEstudiantes = estudiantesBL.ObtenerEstudiantes();
+
+
+            return View(listadeEstudiantes);
         }
     }
 }
