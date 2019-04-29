@@ -1,11 +1,8 @@
 ﻿@model Educacion.BL.Notas
-
 @{
     ViewBag.Title = "Notas Detalle";
 }
-
 <h2>Detalle de Notas @Model.Id</h2>
-
 
 <table class="table">
     <tr>
@@ -37,16 +34,12 @@
             <img src="@Model.Estudiante.UrlImagen" alt="@Model.Estudiante.Nombre" style="max-width: 100px;" />
         </td>
     </tr>
-
 </table>
-
 <p>
     @Html.ActionLink("Nueva Nota", "Crear", new { id = Model.Id })
 </p>
-
 <table class="table">
     <tr>
-
         <th>
             Materia
         </th>
@@ -65,72 +58,42 @@
         <th>
             Nota Final
         </th>
-
         <th></th>
     </tr>
-
     @foreach (var item in Model.ListadeNotasDetalle)
     {
         <tr>
 
-
             <td>
-
                 @Html.DisplayFor(modelItem => item.Materia.Materia)
-
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.PrimerParcial)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.SegundoParcial)
             </td>
-
 
             <td>
                 @Html.DisplayFor(modelItem => item.TercerParcial)
             </td>
 
-
             <td>
                 @Html.DisplayFor(modelItem => item.CuartoParcial)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.NotaFinal)
             </td>
-
             <td>
-
                 @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, null)
             </td>
-
-
 
 
         </tr>
 
     }
-
 </table>
-
 @Html.ActionLink("Regresar a Notas", "Index", "Notas")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

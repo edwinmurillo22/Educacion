@@ -1,11 +1,8 @@
 ﻿@model Educacion.BL.NotasDetalle
-
 @{
     ViewBag.Title = "Crear";
 }
-
 <h2>Crear Nota para la Materia no: @Model.NotaId</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -15,18 +12,14 @@
         <h4>NotasDetalle</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
         @Html.HiddenFor(model => model.NotaId)
-
         <div class="form-group">
             @Html.LabelFor(model => model.Materia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-
                 @Html.DropDownList("MateriaId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MateriaId, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.PrimerParcial, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -34,7 +27,6 @@
                 @Html.ValidationMessageFor(model => model.PrimerParcial, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.SegundoParcial, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -42,7 +34,6 @@
                 @Html.ValidationMessageFor(model => model.SegundoParcial, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.TercerParcial, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -50,7 +41,6 @@
                 @Html.ValidationMessageFor(model => model.TercerParcial, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.CuartoParcial, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -59,19 +49,16 @@
             </div>
         </div>
 
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Regresar a la Lista", "Index")
 </div>
-
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

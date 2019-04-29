@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Educacion.WebAdmin.Controllers
 {
+    [Authorize]
     public class NotasDetalleController : Controller
     {
         NotasBL _notasBL;

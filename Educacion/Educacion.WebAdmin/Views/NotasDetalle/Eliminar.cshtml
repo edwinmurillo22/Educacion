@@ -1,11 +1,8 @@
 ﻿@model Educacion.BL.NotasDetalle
-
 @{
     ViewBag.Title = "Eliminar";
 }
-
-<h2>Eliminar</h2>
-
+<h2>Eliminar Nota no: @Model.NotaId</h2>
 <h3>&iquest;Esta seguro que desea eliminar este registro?</h3>
 <div>
     <h4>NotasDetalle</h4>
@@ -14,70 +11,56 @@
         <dt>
             Nota No:
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.NotaId)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.MateriaId)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Materia.Materia)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.PrimerParcial)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.PrimerParcial)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.SegundoParcial)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.SegundoParcial)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.TercerParcial)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.TercerParcial)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.CuartoParcial)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.CuartoParcial)
         </dd>
 
-    
         <dt>
             @Html.DisplayNameFor(model => model.NotaFinal)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.NotaFinal)
         </dd>
-
     </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         @Html.HiddenFor(model => model.NotaId)
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index", "Notas")
         </div>
     }
 </div>

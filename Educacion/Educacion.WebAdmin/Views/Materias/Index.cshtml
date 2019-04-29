@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<Educacion.BL.Materias>
-
 @{
     ViewBag.Title = "Materias";
 }
-
 <h2>Materias</h2>
-
 <p>
     @Html.ActionLink("Nuevo Crear", "Crear")
 </p>
@@ -14,27 +11,26 @@
         <th>
             @Html.DisplayNameFor(model => model.Materia)
         </th>
-      
+
         <th>
             @Html.DisplayNameFor(model => model.Activo)
         </th>
         <th></th>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Materia)
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Materia)
-     
-        <td>
-            @Html.DisplayFor(modelItem => item.Activo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>

@@ -7,11 +7,14 @@ using System.Web.Mvc;
 
 namespace Educacion.WebAdmin.Controllers
 {
+    [Authorize]
     public class EstudiantesController : Controller
     {
+
+
         EstudiantesBL _estudiantesBL;
         CursosBL _cursosBL;
-        
+
 
         public EstudiantesController()
         {
@@ -34,7 +37,7 @@ namespace Educacion.WebAdmin.Controllers
             var nuevoEstudiantes = new Estudiantes();
             var cursos = _cursosBL.ObtenerCursosActivos();
 
-            ViewBag.CursoId = 
+            ViewBag.CursoId =
                 new SelectList(cursos, "Id", "Curso");
 
             return View(nuevoEstudiantes);
@@ -74,7 +77,7 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursosActivos();
 
-          //  ViewBag.CursoId =
+            //  ViewBag.CursoId =
             //    new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
             return View(estudiantes);
@@ -94,8 +97,8 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursosActivos();
 
-         //   ViewBag.CursoId =
-           //     new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
+            //   ViewBag.CursoId =
+            //     new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
 
             return View(estudiantes);
@@ -106,7 +109,7 @@ namespace Educacion.WebAdmin.Controllers
             var estudiantes = _estudiantesBL.ObtenerEstudiante(id);
             var cursos = _cursosBL.ObtenerCursosActivos();
 
-          //  ViewBag.CursoId =
+            //  ViewBag.CursoId =
             //    new SelectList(cursos, "Id", "Curso", estudiantes.CursoId);
 
             return View(estudiantes);

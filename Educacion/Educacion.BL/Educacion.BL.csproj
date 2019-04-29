@@ -52,6 +52,7 @@
     <Compile Include="Contexto.cs" />
     <Compile Include="Cursos.cs" />
     <Compile Include="CursosBL.cs" />
+    <Compile Include="DatosdeInicio.cs" />
     <Compile Include="Estudiantes.cs" />
     <Compile Include="EstudiantesBL.cs" />
     <Compile Include="Materias.cs" />
@@ -61,6 +62,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportedeAlumnosporClaseBL.cs" />
     <Compile Include="ReportedeAlumnosporClase.cs" />
+    <Compile Include="SeguridadBL.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Educacion.BL
 {
-    public class Contexto : DbContext   
+    public class Contexto : DbContext
     {
         public Contexto() : base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
           Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EstudiantesDB.mdf")
@@ -19,6 +19,7 @@ namespace Educacion.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());// Agregar datos de inicio al momento de crear la  base de datos 
         }
         public DbSet<Estudiantes> Estudiantes { get; set; }
         public DbSet<Cursos> Cursos { get; set; }
@@ -26,6 +27,7 @@ namespace Educacion.BL
         public DbSet<Notas> Notas { get; set; }
         public DbSet<NotasDetalle> NotasDetalle { get; set; }
 
+        public DbSet<Usuario> Usuarios { get; set; }
 
 
     }

@@ -1,11 +1,8 @@
 ﻿@model Educacion.BL.Notas
-
 @{
     ViewBag.Title = "Detalle";
 }
-
 <h2>Detalle</h2>
-
 <div>
     <h4>Notas</h4>
     <hr />
@@ -13,38 +10,30 @@
         <dt>
             @Html.DisplayNameFor(model => model.Curso.Curso)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Curso.Curso)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Anio)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Anio)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Estudiante.Nombre)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Estudiante.Nombre)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Activo)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Activo)
         </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    @Html.ActionLink("Regresar a la lista", "Index")
 </p>

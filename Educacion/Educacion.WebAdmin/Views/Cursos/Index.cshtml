@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<Educacion.BL.Cursos>
-
 @{
     ViewBag.Title = "Cursos";
 }
-
 <h2>Cursos</h2>
-
 <p>
     @Html.ActionLink("Nuevo Curso", "Crear")
 </p>
@@ -25,27 +22,26 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Curso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Modalidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Seccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Jornada)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
-            @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modalidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jornada)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>

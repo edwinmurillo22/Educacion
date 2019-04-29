@@ -8,6 +8,7 @@ namespace Educacion.WebAdmin.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         // GET: Default
         public ActionResult Index()
         {

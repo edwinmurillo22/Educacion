@@ -23,38 +23,29 @@
                 <ul class="nav navbar-nav">
                     <li>
                         @Html.ActionLink("Inicio", "Index", "Home")
-
-                        </li>
-                      <li>
-                          @Html.ActionLink("Estudiantes", "Index", "Estudiantes")
-
-                      </li>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Estudiantes", "Index", "Estudiantes")
+                    </li>
                     <li>
                         @Html.ActionLink("Cursos", "Index", "Cursos")
-
                     </li>
-
                     <li>
                         @Html.ActionLink("Materias", "Index", "Materias")
-
                     </li>
-
                     <li>
                         @Html.ActionLink("Notas", "Index", "Notas")
                     </li>
-
                 </ul>
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
-        
-            <p>&copy; @DateTime.Now.Year -Educacion
-    </div>
 
+        <p>&copy; @DateTime.Now.Year -Educacion
+    </div>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
