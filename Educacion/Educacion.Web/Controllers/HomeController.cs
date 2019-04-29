@@ -12,11 +12,7 @@ namespace Educacion.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var estudiantesBL = new EstudiantesBL();
-            var listadeEstudiantes = estudiantesBL.ObtenerEstudiantes();
-
-
-            return View(listadeEstudiantes);
+            return View();
         }
     }
 }
